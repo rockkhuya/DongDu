@@ -4,6 +4,7 @@
  */
 #include "Machine.h"
 #include "FeaturesSelection.h"
+#include "learner.h"
 
 #include <iostream>
 #include <fstream>
@@ -11,16 +12,16 @@
 
 using namespace std;
 
-void usage()
+void learner_usage()
 {
-	cout << "./learner -i corpus_link -o model&map_folder_path -w window_length" << endl;
+	cout << "Usage: dongdu learn -i corpus_link -o model&map_folder_path -w window_length" << endl;
 	return;
 }
 
-int main(int argc, char **argv)
+int learner_main(int argc, char **argv)
 {
 	if (argc != 7) {
-		usage();
+		learner_usage();
 		return 1;
 	}
 

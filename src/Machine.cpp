@@ -241,8 +241,8 @@ void Machine::featuresSelection()
 bool Machine::load()
 {
 	cout << "Start loading ..." << endl;
-	_model = load_model("/home/anh/workspace/dongdu/Exp/newdongdu.model");
-	if (   !strmap.load("/home/anh/workspace/dongdu/Exp/newdongdu.map")){
+	_model = load_model("data/dongdu.model");
+	if (!strmap.load("data/dongdu.map")){
 		cout << "End loading ..." << endl;
 		return false;
 	}

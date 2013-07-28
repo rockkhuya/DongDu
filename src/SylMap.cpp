@@ -13,8 +13,7 @@ SylMap::SylMap()
 {
 	_syl.clear();
 
-	ifstream ifs("/home/anh/workspace/dongdu/preditctor/src/data/VNsyl.txt");
-
+	ifstream ifs("data/VNsyl.txt");
 	if (!ifs) {
 		cout << "Failed to open file VNsyl.txt" << endl;
 		return;
