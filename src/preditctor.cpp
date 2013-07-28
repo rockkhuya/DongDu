@@ -16,7 +16,10 @@ using namespace std;
 
 void predictor_usage()
 {
-	cout << "Usage: dongdu predict -i input_file_path -o output_file_path" << endl;
+	cout << "Usage: dongdu predict -i input_path -o output_path" << endl
+		 << "input_path and output_path can be either a plain text file or a directory." << endl
+		 << "If it is a directory, the program will process all contained files (NOT recursively) " << endl
+		 << "and output to a file with the same name in output_path directory" << endl;
 	return;
 }
 
