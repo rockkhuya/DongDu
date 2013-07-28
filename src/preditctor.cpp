@@ -37,6 +37,21 @@ void segment(Machine &predictor, string &inputfile, string &outputfile, int &num
 	ifs1.close();
 }
 
+bool endsWith (std::string const &fullString, std::string const &ending)
+{
+    if (fullString.length() >= ending.length()) {
+        return (0 == fullString.compare (
+        		fullString.length() - ending.length(), ending.length(), ending));
+    }
+    return false;
+}
+
+void ensureEndingSlash(string& str) {
+	if (!endsWith(str, "/")) {
+		str.append("/");
+	}
+}
+
 int predictor_main(int argc, char **argv)
 {
 	if (argc != 5) {
@@ -76,6 +91,9 @@ int predictor_main(int argc, char **argv)
 	struct stat st;
 	lstat(input.c_str(), &st);
 	if(S_ISDIR(st.st_mode)) {
+		ensureEndingSlash(input);
+		ensureEndingSlash(output);
+
 		DIR *dir;
 		struct dirent *ent;
 		if ((dir = opendir(input.c_str())) != NULL) {
