@@ -11,6 +11,23 @@ A Vietnamese word segmentation tool.
 * Bài viết về thuật toán và phương pháp cụ thể có thể download ở đây (bản tiếng Việt).
 * Mọi liên hệ, góp ý hay báo lỗi của chương trình, xin gửi về địa chỉ : rockkhuya@gmail.com
 
+# Build predictor and learner
+
+## Dependency libraries for CentOS 7
+For CentOS, install below libraries:
+```
+yum install -y glibc.i686
+yum install -y libstdc++.so.6
+```
+
+## Build predictor and learner
+Using `make` command to build:
+```
+make clean compile
+```
+
+`predictor` and `learner` are generated in `build` folder.
+
 # Install with vagrant
 
 For easier building. We can make with steps:
